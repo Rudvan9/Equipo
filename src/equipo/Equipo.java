@@ -11,10 +11,9 @@ public class Equipo {
     private String tipoDeJuego;
     private Boolean internacional;
     
-    
- //Este es un nuevo comentario   
-    
-    
+//Este es un nuevo comentario
+
+
     public Equipo(
             String nombre,
             int numeroDeJugadores, 
@@ -44,10 +43,10 @@ public class Equipo {
     public void cambioTipoDeJuego(
             String nuevoTipoDeJuego,
             String nuevosJugadores){
-        this.tipoDeJuego = nuevoTipoDeJuego
+        this.tipoDeJuego = nuevoTipoDeJuego;
         this.numeroDeJugadores +=2;  
     }
-            )
+            
             
             
     public String getNombre() {
@@ -93,6 +92,27 @@ public class Equipo {
     
    
     public static void main(String[] args) {
+       Equipo equipoUno = new Equipo(
+               "Cyclones",
+               24,
+               new Date(),
+               "ofensivo",
+               false);
+       
+       Equipo equipoDos = new Equipo(
+               "Real Academia",
+               37,
+               new Date(),
+               "defensivo",
+               true);
+       
+        System.out.println(equipoUno.getNumeroDeJugadores());
+        System.out.println(equipoUno.getInternacional());
+      
+        equipoUno.ampliarPlantilla();
+        
+        System.out.println(equipoUno.getNumeroDeJugadores());
+        System.out.println(equipoUno.getInternacional());
         
     }
     
