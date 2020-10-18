@@ -10,7 +10,8 @@ public class Equipo {
     private Date fechaDeFundacion;
     private String tipoDeJuego;
     private Boolean internacional;
-    
+    private int cantidadDeJugadoresDisponible;
+    private Boolean jugadoresActivos;
 //Este es un nuevo comentario
 
 
@@ -19,12 +20,16 @@ public class Equipo {
             int numeroDeJugadores, 
             Date fechaDeFundacion, 
             String tipoDeJuego, 
-            Boolean internacional) {
+            Boolean internacional,
+            int cantidadDeJugadoresDisponible,
+            Boolean jugadoresActivos) {
         this.nombre = nombre;
         this.numeroDeJugadores = numeroDeJugadores;
         this.fechaDeFundacion = fechaDeFundacion;
         this.tipoDeJuego = tipoDeJuego;
         this.internacional = internacional;
+        this.cantidadDeJugadoresDisponible = cantidadDeJugadoresDisponible;
+        this.jugadoresActivos = jugadoresActivos;
     }
     
     /*
@@ -46,7 +51,12 @@ public class Equipo {
         this.tipoDeJuego = nuevoTipoDeJuego;
         this.numeroDeJugadores +=2;  
     }
-            
+           
+    /*
+    El metodo establece como true el atributo jugadoresActivos
+    */
+    public void entrenarJugadores(){
+        this.jugadoresActivos = true;
             
             
     public String getNombre() {
@@ -89,7 +99,21 @@ public class Equipo {
         this.internacional = internacional;
     }
     
+     public int getcantidadDeJugadoresDisponible() {
+        return cantidadDeJugadoresDisponible;
+    }
+
+    public void setcantidadDeJugadoresDisponible(int cantidadDeJugadoresDisponible) {
+        this.cantidadDeJugadoresDisponible = cantidadDeJugadoresDisponible;
+    }
     
+     public Boolean getjugadoresActivos() {
+        return jugadoresActivos;
+    }
+
+    public void setjugadoresActivos(Boolean jugadoresActivos) {
+        this.jugadoresActivos = jugadoresActivos;
+    }
    
     public static void main(String[] args) {
        Equipo equipoUno = new Equipo(
@@ -97,22 +121,29 @@ public class Equipo {
                24,
                new Date(),
                "ofensivo",
+               false,
+               22,
                false);
        
        Equipo equipoDos = new Equipo(
                "Real Academia",
-               37,
+               32,
                new Date(),
                "defensivo",
+               true,
+               27,
                true);
        
+        System.out.println(equipoUno.getNombre());
         System.out.println(equipoUno.getNumeroDeJugadores());
         System.out.println(equipoUno.getInternacional());
-      
-        equipoUno.ampliarPlantilla();
+        System.out.println(equipoUno.getcantidadDeJugadoresDisponible());
+   
         
-        System.out.println(equipoUno.getNumeroDeJugadores());
-        System.out.println(equipoUno.getInternacional());
+        System.out.println(equipoDos.getNombre());
+        System.out.println(equipoDos.getNumeroDeJugadores());
+        System.out.println(equipoDos.getInternacional());
+        System.out.println(equipoDos.getcantidadDeJugadoresDisponible());
         
     }
     
