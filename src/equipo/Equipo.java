@@ -12,7 +12,8 @@ public class Equipo {
     private Boolean internacional;
     private int cantidadDeJugadoresDisponible;
     private Boolean jugadoresActivos;
-//Este es un nuevo comentario
+    
+    private final EquipoFemenino mujeres;
 
 
     public Equipo(
@@ -30,6 +31,7 @@ public class Equipo {
         this.internacional = internacional;
         this.cantidadDeJugadoresDisponible = cantidadDeJugadoresDisponible;
         this.jugadoresActivos = jugadoresActivos;
+        this.mujeres = new equipoFemenino;
     }
     
     /*
@@ -57,7 +59,7 @@ public class Equipo {
     */
     public void entrenarJugadores(){
         this.jugadoresActivos = true;
-            
+       }     
             
     public String getNombre() {
         return nombre;
