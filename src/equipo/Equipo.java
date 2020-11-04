@@ -13,7 +13,7 @@ public class Equipo {
     private int cantidadDeJugadoresDisponible;
     private Boolean jugadoresActivos;
     
-    private final EquipoFemenino mujeres;
+  private equipoFemenino mujeres;
 
 
     public Equipo(
@@ -31,8 +31,17 @@ public class Equipo {
         this.internacional = internacional;
         this.cantidadDeJugadoresDisponible = cantidadDeJugadoresDisponible;
         this.jugadoresActivos = jugadoresActivos;
-        this.mujeres = new equipoFemenino;
+        this.mujeres = new equipoFemenino(true,1995);
+                }
+
+    public equipoFemenino getMujeres() {
+        return mujeres;
     }
+
+    public void setMujeres(equipoFemenino mujeres) {
+        this.mujeres = mujeres;
+    }
+    
     
     /*
     El metodo aumenta la cantidad de jugadores del equipo en 10
@@ -136,6 +145,14 @@ public class Equipo {
                27,
                true);
        
+       
+       Jugadoras Juliana = new Jugadoras(
+       true,
+       1995,
+       "Juliana",
+       "Encizo",
+       25);
+       
         System.out.println(equipoUno.getNombre());
         System.out.println(equipoUno.getNumeroDeJugadores());
         System.out.println(equipoUno.getInternacional());
@@ -147,6 +164,11 @@ public class Equipo {
         System.out.println(equipoDos.getInternacional());
         System.out.println(equipoDos.getcantidadDeJugadoresDisponible());
         
+        System.out.println(Juliana.getNombre());
+        System.out.println(Juliana.getApellido());
+        System.out.println(Juliana.getEdad());
+        System.out.println(Juliana.getPrimeraDivision());
+        System.out.println(Juliana.getFechaDeNacimiento());
     }
     
 }
